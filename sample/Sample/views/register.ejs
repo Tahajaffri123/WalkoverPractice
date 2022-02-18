@@ -1,0 +1,120 @@
+﻿<!doctype html>
+<html lang="en-US" >
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Register</title>
+<link rel="stylesheet" type="text/css" href="css/bootstrap.min.css">
+<link rel="stylesheet" href="css/datepicker.min.css">
+<link rel='stylesheet' href='css/style.css'  media='all' />
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.css"  media="all">
+<link href="https://fonts.googleapis.com/css2?family=Sen:wght@400;700;800&display=swap" rel="stylesheet">
+<style>
+    .main-bg {
+  width: 100%;
+  height: 100vh;
+  display: flex;
+}
+.main-bg .left {
+  width: 32%;
+  padding: 50px 60px;
+  position: relative;
+  box-shadow: 0 53px 119px rgba(0,0,0,0.2);
+  background-color: #FFF;
+}
+.main-bg .right {
+  width: 68%;
+  background-image: url('/image/bg-2.jpg');
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+}
+.left h1 {
+  font-weight: 600;
+  font-size: 2em;
+  margin-top: 20%;
+}
+.left form {
+  margin-top: 40px;
+}
+.left label {
+  font-weight: 500;
+  font-size: 0.9em;
+}
+.left a {
+  font-weight: 600;
+}
+.left-footer {
+  position: absolute;
+  bottom: 20px;
+  font-size: 0.7em;
+  text-align: center;
+  left: 0;
+  width: 100%;
+  opacity: 0.8;
+}
+.left-footer a {
+  font-weight: 400;
+}
+.dropdown-menu {
+  box-shadow: 0 4px 16px rgba(0,0,0,0.2);
+}
+</style>
+</head>
+<body>
+<main class="main-bg">
+  <div class="left">
+       <img src="/image/logo.png" width="100">
+       <h1 class="mt-5 text-center">REGISTER</h1>
+       <% if(locals.error) { %>
+        <div class="alert alert-danger"><%= error %></div>
+     <% } %>
+        <form method="post">
+            <div class="form-group">
+                 <label for="firstName">Full Name</label>
+                 <input type="text" name="firstName" id="firstName" class="form-control" value="<%= locals.firstName || '' %>" required />
+            </div>
+            <div class="form-group mail">
+                    <label for="username">Username</label>
+                    <input type="text" name="username" id="username" class="form-control" value="<%= locals.username || '' %>" required />
+            </div>
+            <div class="form-group">
+                    <label for="password">Password</label>
+                    <input type="password" name="password" id="password" class="form-control" required />
+            </div>
+            <div class="form-group">
+                    <label for="confirmPassword">Confirm Password</label>
+                    <input type="Password" name="confirmPassword" id="confirmPassword" class="form-control" required />
+            </div>
+            <div class="form-group">
+                    <label for="mobileNO">Mobile Number</label>
+                    <input type="text" name="mobileNO" id="mobileNO" class="form-control" value="<%= locals.mobileNO || '' %>" required />
+            </div>
+            <div class="form-group">
+                    <button type="submit" class="btn btn-primary">Register</button>
+                    <a href="/login" class="btn btn-link">Cancel</a>
+                    
+            </div>
+        </form>
+     <div class="mt-4 text-center">
+                        Existing User? <a href="/login">Login</a>
+                    </div>
+      
+  </div>
+  <div class="right">
+   
+  </div>
+</main>
+<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+<script src="js/script.js"></script>
+<script type="text/javascript" src="js/datepicker.min.js"></script>
+ <script>
+      $('#datepicker').datepicker({
+          uiLibrary: 'bootstrap4'
+      });
+  </script>
+</body>
+</html>
+

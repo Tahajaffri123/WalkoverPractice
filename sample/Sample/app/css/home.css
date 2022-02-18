@@ -1,0 +1,66 @@
+
+#back-pro{
+	height: 300px;
+    background-image: url(../image/97.png);
+    background-size: cover;
+    width: 100%;
+}
+#cd{
+	height: 260px;
+	background-color: #666666;
+	background-size: 300px 300px ;
+}
+.profile-personal {
+    margin-top: -100px;
+}
+.profile-personal, .profile-card {
+    background: #FFF;
+	box-shadow: 0 2px 4px rgb(0 0 0 / 20%);
+    border-radius: .25rem;
+    padding: 30px;
+    position: relative;
+}
+#cd1{
+	height: 260px;
+
+	background-color: #666666;
+	background-size: 300px 300px ;
+	
+}
+#cd2{
+	background-color: #666666;
+	background-size: 300px 300px ;
+}
+.aa:hover{
+	transition: 0.9s;
+	border-radius: 30px;
+	border: 2px /*solid #000*/;
+}
+.actions a {
+	height: 40px;
+	width: 40px;
+	border-radius: 100%;
+	line-height: 40px;
+	text-align: center;
+	transition: 0.3s all;
+	border:1px solid #DDD;
+	display: inline-block;
+  }
+  .actions a:hover  {
+	background-color: #EEE;
+	color: #000;
+	transform: scale(1.1);
+  }
+.page-footer{
+	background-color: #112949;
+	
+	width: 100%;
+	height: 300px;
+	padding: 50px 0;
+}
+.copyright {
+    color: #fff;
+    opacity: 0.8;
+    font-size: 12px;
+    margin-top: 20px;
+}

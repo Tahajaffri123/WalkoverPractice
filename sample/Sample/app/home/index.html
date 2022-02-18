@@ -1,0 +1,615 @@
+﻿<!DOCTYPE html >
+<html >
+<head>
+	<title>Imenso_Software</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+<!-- <script>
+  for (let i = 0 ; i <vm.user.Lang ; i++){
+    getElementById("language");
+  }
+  let txt = "";
+  vm.user.Lang.forEach(myFunction);
+
+  function myFunction(value, index, array) {
+  txt += value;
+}
+</script> -->
+</head>  
+<body >
+  
+      <!-- header -->
+  
+  
+  
+      <nav class="sticky-top navbar bg-light navbar-expand-sm navbar-expand-lg navbar-dark navbar-fixed-side">
+          <a href="#" class="navbar-brand ">
+        <img src="image/logo.png" width="160" height="50" class="d-inline-block align-top" alt="">
+          </a>
+          <h4><strong>Profile</strong></h4>	
+          <button class="navbar-toggler" data-toggle="collapse" data-target="#myMenu">
+              <span class="navbar-toggler-icon"></span>
+          </button>
+      <div id="myMenu" class="collapse navbar-collapse">
+          <ul class="navbar-nav ml-auto">
+        <img src="image/33.png" width="70" height="50" class="d-inline-block align-top" alt="">
+              <li class="nav-item dropdown">
+                
+                      <a data-toggle="dropdown" href="#" class="nav-link text-dark dropdown-toggle">Profile</a>
+                      <div class="dropdown-menu">
+                          <a class="dropdown-item btn-link" href="/login">Logout</a>
+                      </div>
+              </li>  
+          </ul>
+      </div>
+      </nav>
+  
+  
+  
+  <!-- 										---body--- 									-->
+
+
+   
+
+<!-- '''''''''''''''''''''''''PERSONAL INFORMATION''''''''''''''''''''''''''''''' -->
+
+
+<div class="profile">
+  <div id="back-pro"></div> 
+  </div>
+  <div class="container">
+    <div class="profile-personal">
+      <div class="row">
+        <div class="col-md-2 text-center"> 
+          <img src="image/33.png" class="rounded img-fluid"><br><br>
+          
+        </div>
+       
+        <div class="col-md-10">
+          <h4>{{vm.user.firstName}}</h4>
+          <!-- <p ="FirstName"></p><p ="LastName"></p> -->
+           
+          <i class="fa fa-map-marker"></i> {{vm.user.CR}} <br><br>
+
+          <div class="actions float-right">
+             <button class=" btn btn-danger btn-outline" data-toggle="modal" data-target="#personalInfo"><i class="fa fa-pencil"></i>    Update</button>
+          </div>
+          <p class="text">{{vm.user.Bio}}</p> 
+          <div class="mt-4">
+            <div class="row">
+              <div class="col">
+                <div class="personal-info">
+                <small>Email</small>
+                {{vm.user.username}}
+                </div>
+              </div>
+              <div class="col">
+                <div class="personal-info">
+                <small>Phone</small>
+                {{vm.user.mobileNO}}
+                </div>
+              </div>
+              <div class="col">
+                <div class="personal-info">
+                <small>WhatsApp</small>
+                {{vm.user.whatsappNO}}
+                </div>
+              </div>
+            </div>
+            <div class="row mt-3">
+              <div class="col">
+                <div class="personal-info">
+                <small >Gender</small>
+                <p>{{vm.user.Gender}}</p>
+                </div>
+              </div>
+              <div class="col">
+                <div class="personal-info">
+                <small>Country</small>
+                <p >{{vm.user.CR}}</p>
+                </div>
+              </div>
+              <div class="col">
+                <div class="personal-info">
+                <small>Nationality</small>
+                <p >{{vm.user.Nationality}}</p>
+                </div>
+              </div>
+            </div>
+          </div>        
+        </div>
+      </div>    
+  </div> 
+  
+</div>
+</div>
+</div>
+<!-- :::::::::::::::::::::::::   Personal information MODAL :::::::::::::::::::::: -->
+
+
+<div class="modal fade" id="personalInfo" tabindex="-1" role="dialog" aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="">Personal Information</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <div class="row">
+          <div class="col-md-3 text-center">
+            <img src="./image/33.png" class="rounded img-fluid"><br><br>
+            <a href="" class="capsule">Change</a>
+          </div>
+          <div class="col-md-9">
+            <div class="row">
+              <div class="col-md-6">
+                <div class="form-group">
+                  <label>First Name</label>
+                  <input type="text" class="form-control" placeholder="First Name" ng-model="vm.frontUser.firstName">
+                </div>
+              </div>
+              <div class="col-md-6">
+                <div class="form-group">
+                  <label>Last Name</label>
+                  <input type="text" class="form-control" placeholder="Last Name" ng-model="vm.frontUser.lastName">
+                </div>
+              </div>
+              <div class="col-md-12">
+                <div class="form-group">
+                  <label>Bio</label>
+                  <textarea class="form-control" placeholder="Write something about yourself.." ng-model="vm.frontUser.Bio"></textarea>
+                </div>
+              </div>
+              <div class="col-md-6">
+                <div class="form-group">
+                  <label>Email</label>
+                  <input type="text" class="form-control" placeholder="Email" ng-model="vm.frontUser.username">
+                </div>
+              </div>
+              <div class="col-md-6">
+                <div class="form-group">
+                  <label>Gender</label>
+                  <select class="chosen-select" ng-model="vm.frontUser.Gender">
+                    <option value="Select Gender">Select Gender</option>
+                    <option value="Female"> Female</option>
+                    <option value="Male"> Male</option>
+                    <option value="Prefer not to say"> Prefer not to say</option>
+                    <option value="Other"> Other</option>
+                  </select>
+                </div>
+              </div>
+               <div class="col-md-6">
+                <div class="form-group">
+                  <label>Nationality</label>
+                  <input type="text" class="form-control" placeholder="Nationality" ng-model="vm.frontUser.Nationality">
+                </div>
+              </div>
+              <div class="col-md-6">
+                <div class="form-group">
+                  <label>Country of Residence</label>
+                  <select class="chosen-select" ng-model="vm.frontUser.CR">
+                    <option>Select Country</option>
+                    <option value="Afghanistan">Afghanistan</option>
+                    <option value="India">India</option>
+                    <option value="Pakistan">Pakistan</option>
+                    <option value="Saudi Arabia">Saudi Arabia</option>
+                  </select>
+                </div>
+              </div>
+               <div class="col-md-6">
+                <div class="form-group">
+                  <label>Phone Number</label>
+                  <input type="text" class="form-control" placeholder="Phone Number" ng-model="vm.frontUser.mobileNO">
+                </div>
+              </div>
+              <div class="col-md-6">
+                <div class="form-group">
+                  <label>WhatsApp Number</label>
+                  <input type="text" class="form-control" placeholder="WhatsApp Number" ng-model="vm.frontUser.whatsappNO">
+                </div>
+              </div>
+            </div>
+
+          </div>
+        </div>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-light" data-dismiss="modal">Close</button>
+        <button type="button" class="btn btn-primary"  data-dismiss="modal" ng-click="vm.saveUser()">Save changes</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+<!-- ////////////////////Welcome User Banner////////////////////////// -->
+<!-- 
+<br>
+<br>
+<div class="jumbotron jumbotron-container text-center">
+  <h1><i class="fa fa-gamepad"> <i class="fa fa-user-circle" aria-hidden="true"> Hi {{vm.user.firstName}} !!  <i class="fa fa-user-circle" aria-hidden="true">  <i class="fa fa-gamepad"></i></i></i></i></h1>
+</div> -->
+
+
+<!-- SOME ADDITINAL MODAL ACCORDING TO PPROJECT -->
+
+
+<div class="profile-card mt-5">
+  <h4>Skills</h4>
+  <div class="row mt-4">
+    <div class="col-md-4">
+      <div class="card">
+       <div class="card-header">
+          <h4><strong>Languages</strong></h4>
+          <div class="actions">
+                 <button type="button" class="btn pro-bt btn-outline-dark text-center justify-content-center" data-toggle="modal" data-target="#addLanguage"><i class="fa fa-plus"></i>  add</button>
+                 <button class="btn pro-bt btn-outline-dark text-center justify-content-center" data-toggle="modal" data-target="#editLanguage"><i class="fa fa-pencil"></i>  edit</button>
+          </div>
+        </div>
+        <div class="card-body">
+         <!-- <div class="c-row">
+           <span>English:</span>
+           <span class="capsule">{{vm.user.English}}</span>
+         </div>
+         <hr>
+         <div class="c-row">
+           <span>Arabic:</span>
+           <span class="capsule">{{vm.user.Arabic}}</span>
+         </div>
+          <hr>
+           -->
+        <div data-ng-repeat="i in range">
+         <div class=" lang c-row" id="language">
+           <span data-role="langauge">{{vm.user.Lang}}:</span>
+           <span class="capsule">{{vm.user.Pro}}</span>
+          </div>
+         </div>
+        </div>
+      </div>
+    </div>
+    <div class="col-md-4">
+      <div class="card">
+        <div class="card-header">
+          <h4><strong>Expertise</strong></h4>
+           <div class="actions">
+              <button class="btn pro-bt btn-outline-dark text-center justify-content-center" data-toggle="modal" data-target="#addSubject"><i class="fa fa-plus"></i>    add</button>
+             <button class="btn pro-bt btn-outline-dark text-center justify-content-center" data-toggle="modal" data-target="#editSubject"><i class="fa fa-pencil"></i>    edit</button>
+          </div>
+        </div>
+        <div class="card-body">
+          <div class="c-row">
+           <span>Business:</span>
+           <span class="capsule"><strong>{{vm.user.Business}}</strong>/5</span>
+         </div>
+         <hr>
+         <div class="c-row">
+           <span>Technology:</span>
+           <span class="capsule"><strong>{{vm.user.Technology}}</strong>/5</span>
+         </div>
+         <hr>
+         
+          <div class="c-row">
+           <span>{{vm.user.subject}}:</span>
+           <span class="capsule"><strong>{{vm.user.expertise}}</strong>/5</span>
+         </div>
+         
+        </div>
+      </div>
+    </div>
+    <div class="col-md-4">
+      <div class="card">
+      <div class="card-header">
+        <h4><strong> Software & Tools</strong></h4>
+          <div class="actions">  
+             <button class="btn pro-bt btn-outline-dark text-center justify-content-center" data-toggle="modal" data-target="#editSoftware"><i class="fa fa-pencil"></i>   edit</button>                      
+          </div>
+        </div>
+        <div class="card-body">
+          <div class="tools">
+            <span>CAT Tools:</span><br>
+            <span class="capsule">{{vm.user.CATTool}}</span> 
+          </div> 
+          <div class="tools mt-3">
+            <span>MS Office Tools:</span><br>
+            <span class="capsule">{{vm.user.officeTool}}</span> 
+          </div>              
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+<!-- ORIGINAL MODAL SELF CREATED -->
+  
+  <!-- <div class="container-fluid">
+    <div class="container">
+    <div class="row">
+      <div id="cd" class="aa col-md-3  m-3 jumbotron cd-1 flex-auto ">
+        <a href="#"><h2 class="aa text-center text-light font-weight-bold justify-content-center flex-auto">Languages</h2></a>
+      <button type="button" class="btn pro-bt btn-outline-light text-center justify-content-center" data-toggle="modal" data-target="#addLanguage">add</button>
+      <button class="btn pro-bt btn-outline-light text-center justify-content-center" data-toggle="modal" data-target="#editLanguage">edit</button>
+      </div>
+      <div id="cd1" class="aa col-md-3 m-3 jumbotron cd-1">
+        <a href="#"><h2 class="text-center  text-light justify-content-center font-weight-bold">Expertise</h2></a>
+         <button class="btn pro-bt btn-outline-light text-center justify-content-center" data-toggle="modal" data-target="#addSubject">add</button>
+         <button class="btn pro-bt btn-outline-light text-center justify-content-center" data-toggle="modal" data-target="#editSubject">edit</button>
+      </div>
+      <div id="cd2" class="aa col-md-3 m-3 jumbotron cd-1">
+        <a href="#"><h2 class="text-center text-light  justify-content-center  font-weight-bold">Software & Tools</h2></a>
+         <button class="btn pro-bt btn-outline-light text-center justify-content-center" data-toggle="modal" data-target="#editSoftware">edit</button>
+      </div>
+    </div>
+    </div>
+  </div> -->
+  
+  
+
+  <!-- ...................modal as per imenso sample project.................. -->
+  
+  
+<div class="modal fade" id="addLanguage" tabindex="-1" role="dialog" aria-hidden="true">
+        <div class="modal-dialog modal-lg" role="document">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h5 class="modal-title" id="">Add Language</h5>
+              <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+              </button>
+            </div>
+            <div class="modal-body">
+              <div class="row">          
+                <div class="col-md-12">
+                   <div class="form-group">
+                      <label>Language</label>
+                      <select class="chosen-select" ng-model="vm.frontUser.Lang">
+                        <option>Select Language</option>
+                        <option value="English">English</option>
+                        <option value="Arabic">Arabic</option>
+                        <option value="Spanish">Spanish</option>
+                        <option value="French">French</option>
+                      </select>
+                    </div>
+                    <div class="form-group">
+                      <label>Proficiency</label>
+                      <select class="chosen-select" ng-model="vm.frontUser.Pro">
+                        <option>Select Proficiency</option>
+                        <option value="Elementory">Elementory</option>
+                        <option value="Limited">Limited</option>
+                        <option value="Professional Working">Professional Working</option>
+                        <option value="Full Professional">Full Professional</option>
+                        <option value="Native/Bilingual">Native/Bilingual</option>
+                      </select>
+                    </div>
+                </div>             
+              </div>
+            </div>
+            <div class="modal-footer">
+              <button type="button" class="btn btn-light" data-dismiss="modal">Close</button>
+              <button type="button" class="btn btn-primary" data-dismiss="modal" ng-click="vm.saveUser()">Submit</button>
+            </div>
+          </div>
+        </div>
+</div>
+
+      <!-- // Add Language -->
+      <!-- {{ for (var i =1; i <=10;  i++ ) { }}
+        <br/>  {{= i }} 
+        {{#  will output the numbers 1-10 }}
+        {{ } }} -->
+<div class="modal fade" id="editLanguage" tabindex="-1" role="dialog" aria-hidden="true">
+        <div class="modal-dialog" role="document">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h5 class="modal-title" id="">Edit Language</h5>
+              <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+              </button>
+            </div>
+            <div class="modal-body">
+              <div class="row align-items-center">          
+                <div class="col-md-11">            
+                    <div class="form-group">
+                      <label><strong>{{vm.user.Lang}}</strong></label>
+                      <select class="chosen-select" name='Pro' ng-model="vm.frontUser.Pro">
+                        <option>{{vm.user.pro}}</option>
+                        <option value="Elementory">Elementory</option>
+                        <option value="Limited">Limited</option>
+                        <option value="Professional Working">Professional Working</option>
+                        <option value="Full Professional">Full Professional</option>
+                        <option value="Native/Bilingual">Native/Bilingual</option>
+                      </select>
+                    </div>
+                </div>
+                <a href="">
+                  <i class='fa fa-trash' style='font-size:27px'></i></a>           
+              </div>
+               <div class="row align-items-center">          
+                <div class="col-md-11">            
+                    <div class="form-group">
+                      <label><strong>{{vm.user.Lang}}</strong></label>
+                      <select class="chosen-select" name='Pro' ng-model="vm.frontUser.Pro">
+                        <option>{{vm.user.Pro}}</option>
+                        <option value="Elementory">Elementory</option>
+                        <option value="Limited">Limited</option>
+                        <option value="Professional Working">Professional Working</option>
+                        <option value="Full Professional">Full Professional</option>
+                        <option value="Native/Bilingual">Native/Bilingual</option>
+                      </select>
+                    </div>
+                </div>
+                <div class="col-md-1"> <a href=""><i class="fa fa-trash" style='font-size:27px'></i></a></div>            
+              </div>
+            </div>
+            <div class="modal-footer">
+              <button type="button" class="btn btn-light" data-dismiss="modal">Close</button>
+              <button type="button" class="btn btn-primary" data-dismiss="modal" ng-click="vm.saveUser()">Save Changes</button>
+            </div>
+          </div>
+        </div>
+</div>
+
+
+      <!-- // Edit Language -->
+      
+<div class="modal fade" id="addSubject" tabindex="-1" role="dialog" aria-hidden="true">
+        <div class="modal-dialog" role="document">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h5 class="modal-title" id="">Add Subject Matter Expertise</h5>
+              <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+              </button>
+            </div>
+            <div class="modal-body">
+              <div class="row">          
+                <div class="col-md-12">
+                   <div class="form-group">
+                      <label>Subject</label>
+                      <select class="chosen-select" ng-model="vm.frontUser.subject">
+                        <option>Select Subject</option>
+                        <option value="Business">Business</option>
+                        <option value="Technology">Technology</option>
+                        <option value="Finance">Finance</option>
+                        <option value="Healthcare">Healthcare</option>
+                      </select>
+                    </div>
+                    <div class="form-group">
+                      <label>Expertise</label>
+                      <select class="chosen-select" ng-model="vm.frontUser.expertise">
+                        <option>Select Expertise Level</option>
+                        <option value="1">1</option>
+                        <option value="2">2</option>
+                        <option value="3">3</option>
+                        <option value="4">4</option>
+                        <option value="5">5</option>
+                      </select>
+                    </div>
+                </div>             
+              </div>
+            </div>
+            <div class="modal-footer">
+              <button type="button" class="btn btn-light" data-dismiss="modal">Close</button>
+              <button type="button" class="btn btn-primary" data-dismiss="modal" ng-click="vm.saveUser()">Submit</button>
+            </div>
+          </div>
+        </div>
+</div>
+
+
+      <!-- // Add Subject Matter Expertise -->
+      
+<div class="modal fade" id="editSubject" tabindex="-1" role="dialog" aria-hidden="true">
+        <div class="modal-dialog" role="document">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h5 class="modal-title" id="">Edit Subject Matter Expertise</h5>
+              <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+              </button>
+            </div>
+            <div class="modal-body">
+              <div class="row align-items-center">          
+                <div class="col-md-11">            
+                    <div class="form-group">
+                      <label><strong>{{vm.user.subject}}</strong></label>
+                      <select class="chosen-select" ng-model="vm.frontUser.expertise">
+                        <option>{{vm.user.expertise}}</option>
+                        <option value="1">1</option>
+                        <option value="2">2</option>
+                        <option value="3">3</option>
+                        <option value="4">4</option>
+                        <option value="5">5</option>
+                      </select>
+                    </div>
+                </div>
+                <div class="col-md-1"> <a href=""><i class="fa fa-trash" style='font-size:27px'></i></a></div>            
+              </div>
+               <div class="row align-items-center">          
+                <div class="col-md-11">            
+                    <div class="form-group">
+                      <label><strong>{{vm.user.subject}}</strong></label>
+                      <select class="chosen-select" ng-model="vm.frontUser.expertise">
+                       <option>{{vm.user.expertise}}</option>
+                        <option value="1">1</option>
+                        <option value="2">2</option>
+                        <option value="3">3</option>
+                        <option value="4">4</option>
+                        <option value="5">5</option>
+                      </select>
+                    </div>
+                </div>
+                <div class="col-md-1"> <a href="" ng-click="vm.deleteUser()"><i class="fa fa-trash" style='font-size:27px'></i></a></div>            
+              </div>
+            </div>
+            <div class="modal-footer">
+              <button type="button" class="btn btn-light" data-dismiss="modal">Close</button>
+              <button type="button" class="btn btn-primary" data-dismiss="modal" ng-click="vm.saveUser()">Save Changes</button>
+            </div>
+          </div>
+        </div>
+</div>
+
+
+      <!-- // Edit Subject Matter Expertise -->
+      
+<div class="modal fade" id="editSoftware" tabindex="-1" role="dialog" aria-hidden="true" method="post">
+        <div class="modal-dialog" role="document">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h5 class="modal-title" id="">Software & Tools</h5>
+              <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+              </button>
+            </div>
+            <div class="modal-body">
+              <div class="row">          
+                <div class="col-md-12">
+                   <div class="form-group">
+                      <label>CAT Tools</label>
+                      <select class="chosen-select" ng-model="vm.frontUser.CATTool">                 
+                        <option value="MemoQ">MemoQ</option>
+                        <option value="SDS Trado">SDS Trados</option>
+                        <option value="Other">Other</option>                 
+                      </select>
+                    </div>
+                    <div class="form-group">
+                      <label>MS Office Tools</label>
+                      <select class="chosen-select" ng-model="vm.frontUser.officeTool">                  
+                        <option value="MS Work">MS Work</option>
+                        <option value="MS Excel">MS Excel</option>
+                        <option value="MS PowerPoint">MS PowerPoint</option>
+                        <option value="MS Visio">MS Visio</option>                  
+                      </select>
+                    </div>
+                </div>             
+              </div>
+            </div>
+            <div class="modal-footer">
+              <button type="button" class="btn btn-light" data-dismiss="modal">Close</button>
+              <button type="button" class="btn btn-primary"  data-dismiss="modal" ng-click="vm.saveUser()">Save Changes</button>
+            </div>
+          </div>
+        </div>
+</div>
+
+
+      <!-- // Edit Software Skills -->
+
+
+
+
+  <!-- 						------footer-------											 -->  
+
+
+
+  <footer class="page-footer font-small indigo">
+        <div class="copyright  text-center py-3">© 2021 Copyright by the Creater Taha Jaffri:</div>
+  </footer>
+
+
+
+</body>
+</html>
